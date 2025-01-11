@@ -1,0 +1,2675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.2">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Optimal ins Leben</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07c16812f08c4a1591d6ec4fc46327fa.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3606d0c01774da1692c0b51ce86daa83.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Optimal ins Leben</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Optimal ins Leben</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(81)</span></div></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1549407600000" data-listing-file-modified-sort="1736558990030" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2075">
+<div class="thumbnail">
+<p><a href="./qmds/0e6ea9a510764afe80d720d44c5cf8c0.html" class="no-external"></a></p><a href="./qmds/0e6ea9a510764afe80d720d44c5cf8c0.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/0e6ea9a510764afe80d720d44c5cf8c0.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/0e6ea9a510764afe80d720d44c5cf8c0.html" class="no-external">Startfolge Optimal ins Leben starten mit deinem Welpen oder Junghund!</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/0e6ea9a510764afe80d720d44c5cf8c0.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/0e6ea9a510764afe80d720d44c5cf8c0.html" class="no-external">Hi, schön, dass du da bist. Bei einem Welpen und Junge und die Podcast. Ich freue mich, riesig, dass du heute dabei bist. Mein Name ist Lisa Stolz Lechner und ich bin Welpen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/0e6ea9a510764afe80d720d44c5cf8c0.html" class="no-external">
+<div class="listing-date">
+Feb 6, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1550012400000" data-listing-file-modified-sort="1736558990044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3523">
+<div class="thumbnail">
+<p><a href="./qmds/93782b94b42446f59ef7b8d22e4bfb6f.html" class="no-external"></a></p><a href="./qmds/93782b94b42446f59ef7b8d22e4bfb6f.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/93782b94b42446f59ef7b8d22e4bfb6f.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/93782b94b42446f59ef7b8d22e4bfb6f.html" class="no-external">Die zwei wichtigsten Dinge die du von Anfang an mit deinem Welpen trainieren solltest</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/93782b94b42446f59ef7b8d22e4bfb6f.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/93782b94b42446f59ef7b8d22e4bfb6f.html" class="no-external">Hi, schön, dass du da bist beim Welpen und Junge und the Podcast. Ich freue mich, riesig, dass du heute dabei bist. Mein Name ist Lisa Stolz Lechner und ich bin Welpen und…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/93782b94b42446f59ef7b8d22e4bfb6f.html" class="no-external">
+<div class="listing-date">
+Feb 13, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1550617200000" data-listing-file-modified-sort="1736558990053" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3747">
+<div class="thumbnail">
+<p><a href="./qmds/eaa6a959d8ee4c9a811020cd0fe21201.html" class="no-external"></a></p><a href="./qmds/eaa6a959d8ee4c9a811020cd0fe21201.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/eaa6a959d8ee4c9a811020cd0fe21201.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/eaa6a959d8ee4c9a811020cd0fe21201.html" class="no-external">Wie du einen Konflikt im Hund erkennen kannst bevor er knurrt oder beisst</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/eaa6a959d8ee4c9a811020cd0fe21201.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/eaa6a959d8ee4c9a811020cd0fe21201.html" class="no-external">Hi, schön, dass du da bist beim Welpen und Junge und the Podcast. Ich freue mich, ich riesig, dass du heute dabei bist. Mein Name ist Lisa Stolz Lechner und ich bin Welpen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/eaa6a959d8ee4c9a811020cd0fe21201.html" class="no-external">
+<div class="listing-date">
+Feb 20, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1551222000000" data-listing-file-modified-sort="1736558990054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4098">
+<div class="thumbnail">
+<p><a href="./qmds/fc43be326d0e4549a91e7ba61863525f.html" class="no-external"></a></p><a href="./qmds/fc43be326d0e4549a91e7ba61863525f.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/fc43be326d0e4549a91e7ba61863525f.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/fc43be326d0e4549a91e7ba61863525f.html" class="no-external">Hund-Hund-Spiel - Worauf kommt es an?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/fc43be326d0e4549a91e7ba61863525f.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/fc43be326d0e4549a91e7ba61863525f.html" class="no-external">Hi, schönes zu da bis beim Welpen und Junge und dem Podcast. Manchmal ist Lisa stolz-lechner und ich bin Welpen und Junge und ich trainere aus wiehen und ich frem ich das zu…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/fc43be326d0e4549a91e7ba61863525f.html" class="no-external">
+<div class="listing-date">
+Feb 27, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1551826800000" data-listing-file-modified-sort="1736558990035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3955">
+<div class="thumbnail">
+<p><a href="./qmds/4ce9acc9be31479bacd54dbd234bd19d.html" class="no-external"></a></p><a href="./qmds/4ce9acc9be31479bacd54dbd234bd19d.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/4ce9acc9be31479bacd54dbd234bd19d.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/4ce9acc9be31479bacd54dbd234bd19d.html" class="no-external">Der richtige Trainingszeitpunkt für dich und deinen Welpen oder Junghund</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/4ce9acc9be31479bacd54dbd234bd19d.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/4ce9acc9be31479bacd54dbd234bd19d.html" class="no-external">Hi, schön, dass du da bist beim Welpen und Junge undepotzt kannst. Mein Name ist Lisa Steuze Lechner und ich bin Welpen und Junge von den Trainerinnen aus Wien. Und ich…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/4ce9acc9be31479bacd54dbd234bd19d.html" class="no-external">
+<div class="listing-date">
+Mar 6, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1552431600000" data-listing-file-modified-sort="1736558990037" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2467">
+<div class="thumbnail">
+<p><a href="./qmds/59ddddc284524ccb9b99d7b7359bbd62.html" class="no-external"></a></p><a href="./qmds/59ddddc284524ccb9b99d7b7359bbd62.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/59ddddc284524ccb9b99d7b7359bbd62.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/59ddddc284524ccb9b99d7b7359bbd62.html" class="no-external">Wie du dein Zuhause sicher für Welpen und Junghunde gestalten kannst</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/59ddddc284524ccb9b99d7b7359bbd62.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/59ddddc284524ccb9b99d7b7359bbd62.html" class="no-external">Hi, schön, dass du da bist beim Welpen und Junge der Podcast. Mein Name ist Lisa Stolz Lechner und ich bin Welpen und Junge und ich bin trainerin aus Wien und ich verhält…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/59ddddc284524ccb9b99d7b7359bbd62.html" class="no-external">
+<div class="listing-date">
+Mar 13, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1553036400000" data-listing-file-modified-sort="1736558990053" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2628">
+<div class="thumbnail">
+<p><a href="./qmds/f77bbab4ddb349debbfd0b4f0dfe91cd.html" class="no-external"></a></p><a href="./qmds/f77bbab4ddb349debbfd0b4f0dfe91cd.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/f77bbab4ddb349debbfd0b4f0dfe91cd.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/f77bbab4ddb349debbfd0b4f0dfe91cd.html" class="no-external">Wie du erkennen kannst, dass sich dein Hund gerade in der Pubertät befindet</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/f77bbab4ddb349debbfd0b4f0dfe91cd.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/f77bbab4ddb349debbfd0b4f0dfe91cd.html" class="no-external">Hi, schön, dass du da bist beim Welpen und Jungen der Podcast. Mein Name ist Lisa Stolz Lechner und ich bin Welpen und Jungenhundeträhner in Assovien. Und ich möchte dir…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/f77bbab4ddb349debbfd0b4f0dfe91cd.html" class="no-external">
+<div class="listing-date">
+Mar 20, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1554242400000" data-listing-file-modified-sort="1736558990042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2922">
+<div class="thumbnail">
+<p><a href="./qmds/88db58e6b4ae4412bd7b9ba91020da7b.html" class="no-external"></a></p><a href="./qmds/88db58e6b4ae4412bd7b9ba91020da7b.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/88db58e6b4ae4412bd7b9ba91020da7b.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/88db58e6b4ae4412bd7b9ba91020da7b.html" class="no-external">🧠 LERNEN aus neurobiologischer Sicht Teil 1</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/88db58e6b4ae4412bd7b9ba91020da7b.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/88db58e6b4ae4412bd7b9ba91020da7b.html" class="no-external">Hi, schön, dass du da bist beim Weppen und Jungen und Lepportkast. Mein Name ist Lisa Stolz Lechner und ich bin Weppen und Jungen und die Trainerin auswählen. Und ich möchte…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/88db58e6b4ae4412bd7b9ba91020da7b.html" class="no-external">
+<div class="listing-date">
+Apr 3, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1554847200000" data-listing-file-modified-sort="1736558990041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5725">
+<div class="thumbnail">
+<p><a href="./qmds/80eab9d5a58247708b354660fac2cdc9.html" class="no-external"></a></p><a href="./qmds/80eab9d5a58247708b354660fac2cdc9.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/80eab9d5a58247708b354660fac2cdc9.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/80eab9d5a58247708b354660fac2cdc9.html" class="no-external">Genervt, verzweifelt und frustriert? Mehr Entspannung und Gelassenheit mit deinem Welpen oder Junghund</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/80eab9d5a58247708b354660fac2cdc9.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/80eab9d5a58247708b354660fac2cdc9.html" class="no-external">Hi, schönes zu dar bist beim Webmen und Jungen in den Podcast. Mein Name ist Lisa Stolz Lechner und ich her für Menschen dabei, dass sie ihren Alltag harmonischer und…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/80eab9d5a58247708b354660fac2cdc9.html" class="no-external">
+<div class="listing-date">
+Apr 10, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1555452000000" data-listing-file-modified-sort="1736558990031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3590">
+<div class="thumbnail">
+<p><a href="./qmds/197d1e3d49dd47059badcc3b23711177.html" class="no-external"></a></p><a href="./qmds/197d1e3d49dd47059badcc3b23711177.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/197d1e3d49dd47059badcc3b23711177.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/197d1e3d49dd47059badcc3b23711177.html" class="no-external">Dominanz im Hundetraining und warum uns das im Training mit unseren Hunden nicht hilft</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/197d1e3d49dd47059badcc3b23711177.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/197d1e3d49dd47059badcc3b23711177.html" class="no-external">Hi! Schön, dass du wieder mit dabei bist beim Welpen und Jungen und den Podcast. Mein Name ist Lisa Stolz Lechner und ich bin Welpen und Jungenhundetrinner aus Wien und ich…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/197d1e3d49dd47059badcc3b23711177.html" class="no-external">
+<div class="listing-date">
+Apr 17, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1556056800000" data-listing-file-modified-sort="1736558990031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4631">
+<div class="thumbnail">
+<p><a href="./qmds/227ef98c77074a3f983e7b26add00b7f.html" class="no-external"></a></p><a href="./qmds/227ef98c77074a3f983e7b26add00b7f.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/227ef98c77074a3f983e7b26add00b7f.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/227ef98c77074a3f983e7b26add00b7f.html" class="no-external">Körperpflegemaßnahmen und warum Kooperation besser ist als Fixieren</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/227ef98c77074a3f983e7b26add00b7f.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/227ef98c77074a3f983e7b26add00b7f.html" class="no-external">Hi, schönes zu da bis beim Webmontyung und dem Podcast. Mein Name ist Lisa Stolz Lechner und ich bin Webmontyung und ich bin Tränerin. Und ich erfe Junge und hunden dabei…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/227ef98c77074a3f983e7b26add00b7f.html" class="no-external">
+<div class="listing-date">
+Apr 24, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1557871200000" data-listing-file-modified-sort="1736558990033" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-word-count-sort="4425">
+<div class="thumbnail">
+<p><a href="./qmds/3c0bc282074e47c1af8f951d5a3ea289.html" class="no-external"></a></p><a href="./qmds/3c0bc282074e47c1af8f951d5a3ea289.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/3c0bc282074e47c1af8f951d5a3ea289.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/3c0bc282074e47c1af8f951d5a3ea289.html" class="no-external">Warum ich Futter im Training so sehr liebe</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/3c0bc282074e47c1af8f951d5a3ea289.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/3c0bc282074e47c1af8f951d5a3ea289.html" class="no-external">Hi, schönes Daabes beim Web-Mundjungen und dem Podcast. Mein Name ist Lisa Stolz Lechner und ich bin Web- und Jungenhundetrenerin. Und ich erfe Junge und hunden dabei…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/3c0bc282074e47c1af8f951d5a3ea289.html" class="no-external">
+<div class="listing-date">
+May 15, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1559080800000" data-listing-file-modified-sort="1736558990047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4368">
+<div class="thumbnail">
+<p><a href="./qmds/b91fc798cac0465c976af8730b421306.html" class="no-external"></a></p><a href="./qmds/b91fc798cac0465c976af8730b421306.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/b91fc798cac0465c976af8730b421306.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/b91fc798cac0465c976af8730b421306.html" class="no-external">Halsband oder Brustgeschirr? Was ist für deinen Welpen oder Junghund besser geeignet?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/b91fc798cac0465c976af8730b421306.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/b91fc798cac0465c976af8730b421306.html" class="no-external">Hi, schön, dass du da bist beim Welpen und Junge und der Podcast. Mein Name ist Lisa Stolz Lechner und ich bin Welpen und Junge und die Trainerin. Und ich herfe Junge und…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/b91fc798cac0465c976af8730b421306.html" class="no-external">
+<div class="listing-date">
+May 29, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-listing-date-sort="1560376800000" data-listing-file-modified-sort="1736558990047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="34" data-listing-word-count-sort="6671">
+<div class="thumbnail">
+<p><a href="./qmds/b6709fa79c414ec8ba91ff25501f56aa.html" class="no-external"></a></p><a href="./qmds/b6709fa79c414ec8ba91ff25501f56aa.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/b6709fa79c414ec8ba91ff25501f56aa.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/b6709fa79c414ec8ba91ff25501f56aa.html" class="no-external">Allein zu Haus’ - wie du deinem jungen Hund das Alleine-Bleiben beibringen kannst</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/b6709fa79c414ec8ba91ff25501f56aa.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/b6709fa79c414ec8ba91ff25501f56aa.html" class="no-external">Hi, schön, dass du wieder mit dabei bist beim selben und jungen Podcast. Mein Name ist Lisa stolz, lechne und ich bin Welpen und jungen und Trainerin. Und ich herfe jungen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/b6709fa79c414ec8ba91ff25501f56aa.html" class="no-external">
+<div class="listing-date">
+Jun 13, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1563314400000" data-listing-file-modified-sort="1736558990043" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2678">
+<div class="thumbnail">
+<p><a href="./qmds/8d9a6701318b458b94b48e80ce53cbd0.html" class="no-external"></a></p><a href="./qmds/8d9a6701318b458b94b48e80ce53cbd0.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/8d9a6701318b458b94b48e80ce53cbd0.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/8d9a6701318b458b94b48e80ce53cbd0.html" class="no-external">Die Gefahren des Sommers für unsere Welpen und Junghunde</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/8d9a6701318b458b94b48e80ce53cbd0.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/8d9a6701318b458b94b48e80ce53cbd0.html" class="no-external">Hallo und Willkommen beim Web und Junge und Reportcast. Mein Name ist Lisa Steutslechner und ich bin Welpen und Junge und ich trinne Rimm. Ich herfür Menschen dabei, im Web…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/8d9a6701318b458b94b48e80ce53cbd0.html" class="no-external">
+<div class="listing-date">
+Jul 17, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-listing-date-sort="1563919200000" data-listing-file-modified-sort="1736558990036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4071">
+<div class="thumbnail">
+<p><a href="./qmds/5483ba87696340f1bc86fe65dc3e937b.html" class="no-external"></a></p><a href="./qmds/5483ba87696340f1bc86fe65dc3e937b.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/5483ba87696340f1bc86fe65dc3e937b.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/5483ba87696340f1bc86fe65dc3e937b.html" class="no-external">Tierschutzhund oder Hund vom Züchter? Entscheide dich!</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/5483ba87696340f1bc86fe65dc3e937b.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/5483ba87696340f1bc86fe65dc3e937b.html" class="no-external">Hi! Willkommen beim Welpen und Jungen der Podcast. Mein Name ist Lisa Stolenzlechner und ich bin Welpen und Jungen in Trinnen. Ich erfe Menschen dabei, im Welpen oder Jungen…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/5483ba87696340f1bc86fe65dc3e937b.html" class="no-external">
+<div class="listing-date">
+Jul 24, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-listing-date-sort="1564524000000" data-listing-file-modified-sort="1736558990041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2134">
+<div class="thumbnail">
+<p><a href="./qmds/84a83e18317b4b5fa144471e3531beaf.html" class="no-external"></a></p><a href="./qmds/84a83e18317b4b5fa144471e3531beaf.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/84a83e18317b4b5fa144471e3531beaf.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/84a83e18317b4b5fa144471e3531beaf.html" class="no-external">Probleme mit der Stubenreinheit? Die 6 häufigsten Gründe, warum es mit der Stubenreinheit nicht klappt</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/84a83e18317b4b5fa144471e3531beaf.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/84a83e18317b4b5fa144471e3531beaf.html" class="no-external">Hallo und willkommen beim Welpen und Junge und Podcast. Mein Name ist Lisa Stolzsechner und ich bin Welpen und Junge und ich bin Trinare. Und ich habe für Menschen dabei im…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/84a83e18317b4b5fa144471e3531beaf.html" class="no-external">
+<div class="listing-date">
+Jul 31, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1565733600000" data-listing-file-modified-sort="1736558990046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2633">
+<div class="thumbnail">
+<p><a href="./qmds/add40cdef8464d80b6f45a7a9369f6cd.html" class="no-external"></a></p><a href="./qmds/add40cdef8464d80b6f45a7a9369f6cd.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/add40cdef8464d80b6f45a7a9369f6cd.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/add40cdef8464d80b6f45a7a9369f6cd.html" class="no-external">Rasseportrait der Labrador Retriever</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/add40cdef8464d80b6f45a7a9369f6cd.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/add40cdef8464d80b6f45a7a9369f6cd.html" class="no-external">Hi, schön, dass du da bist beim Welt, und Junge und den Podcast. Mein Name ist Lisa Stolzlechner und ich bin Welpen und Junge und der Trainerin. Und ich erfe Menschen dabei…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/add40cdef8464d80b6f45a7a9369f6cd.html" class="no-external">
+<div class="listing-date">
+Aug 14, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-listing-date-sort="1566338400000" data-listing-file-modified-sort="1736558990053" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1709">
+<div class="thumbnail">
+<p><a href="./qmds/f9f41c68a4c741fb95aea017a5ac7d81.html" class="no-external"></a></p><a href="./qmds/f9f41c68a4c741fb95aea017a5ac7d81.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/f9f41c68a4c741fb95aea017a5ac7d81.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/f9f41c68a4c741fb95aea017a5ac7d81.html" class="no-external">Trainier mit mir! Warum ich beschlossen habe, Welpentraining Online anzubieten</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/f9f41c68a4c741fb95aea017a5ac7d81.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/f9f41c68a4c741fb95aea017a5ac7d81.html" class="no-external">Hallo und willkommen beim Welpen und Junge und Podcast. Mein Name ist Lisa Stolzlechme und ich bin Welpen und Junge ohne Trainerin. Ich helfe Menschen dabei, in Welpen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/f9f41c68a4c741fb95aea017a5ac7d81.html" class="no-external">
+<div class="listing-date">
+Aug 21, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-listing-date-sort="1568152800000" data-listing-file-modified-sort="1736558990042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5124">
+<div class="thumbnail">
+<p><a href="./qmds/851b656e37a64f2687db8eb803a42352.html" class="no-external"></a></p><a href="./qmds/851b656e37a64f2687db8eb803a42352.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/851b656e37a64f2687db8eb803a42352.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/851b656e37a64f2687db8eb803a42352.html" class="no-external">Spielen ist wichtig! Und nein, Zerrspiele sind nicht böse</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/851b656e37a64f2687db8eb803a42352.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/851b656e37a64f2687db8eb803a42352.html" class="no-external">Hallo und willkommen beim Welpen und Junge und Plotkast. Mein Name ist Lisa Stahlzlechner und ich bin Welpen und Junge mit Trainerin. Und ich helfe Menschen dabei, ihr in…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/851b656e37a64f2687db8eb803a42352.html" class="no-external">
+<div class="listing-date">
+Sep 11, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-listing-date-sort="1569967200000" data-listing-file-modified-sort="1736558990040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2151">
+<div class="thumbnail">
+<p><a href="./qmds/7f6429b04d5d43c69f2105cc5207a707.html" class="no-external"></a></p><a href="./qmds/7f6429b04d5d43c69f2105cc5207a707.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/7f6429b04d5d43c69f2105cc5207a707.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/7f6429b04d5d43c69f2105cc5207a707.html" class="no-external">Angst vor dem Tierarzt? Wie du diese verhindern kannst</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/7f6429b04d5d43c69f2105cc5207a707.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/7f6429b04d5d43c69f2105cc5207a707.html" class="no-external">Hallo und herzlich willkommen beim Weltmanjunghundepotcast. Manamest Lisa Stahlzlechner und ich bin Welken und Jungenhundetrinerin. Und ich erfe Menschen dabei, ihren Welten…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/7f6429b04d5d43c69f2105cc5207a707.html" class="no-external">
+<div class="listing-date">
+Oct 2, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-listing-date-sort="1571004000000" data-listing-file-modified-sort="1736558990029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2175">
+<div class="thumbnail">
+<p><a href="./qmds/017ccde727a843fdbf596262a0d18bf5.html" class="no-external"></a></p><a href="./qmds/017ccde727a843fdbf596262a0d18bf5.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/017ccde727a843fdbf596262a0d18bf5.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/017ccde727a843fdbf596262a0d18bf5.html" class="no-external">Rasseportrait der Border Collie</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/017ccde727a843fdbf596262a0d18bf5.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/017ccde727a843fdbf596262a0d18bf5.html" class="no-external">Hallo und herzlich willkommen zum Welpen und Junge und the Podcast. Mahne meist Lisa stolzlechnen und ich bin Welpen und Junge und den Trainerin. Und ich herfe Menschen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/017ccde727a843fdbf596262a0d18bf5.html" class="no-external">
+<div class="listing-date">
+Oct 14, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-listing-date-sort="1572390000000" data-listing-file-modified-sort="1736558990053" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1927">
+<div class="thumbnail">
+<p><a href="./qmds/e51b28700923434a9a420389f7d18997.html" class="no-external"></a></p><a href="./qmds/e51b28700923434a9a420389f7d18997.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/e51b28700923434a9a420389f7d18997.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/e51b28700923434a9a420389f7d18997.html" class="no-external">STOP, NICHT ANFASSEN! Wie du verhindern kannst, dass sich jeder auf deinen Welpen oder Junghund stürzt</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/e51b28700923434a9a420389f7d18997.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/e51b28700923434a9a420389f7d18997.html" class="no-external">Du es einen Welpen- oder Jungenhund und der ist so passiss. Er hat große Kohle-Augen, Schlapporen, Er tarbst lustig durch die Gegend, hat super weiches, flaschiges Fell und…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/e51b28700923434a9a420389f7d18997.html" class="no-external">
+<div class="listing-date">
+Oct 30, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-listing-date-sort="1574809200000" data-listing-file-modified-sort="1736558990032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2650">
+<div class="thumbnail">
+<p><a href="./qmds/2a1ba666-70dc-46cf-8b68-33d7f8c913a0.html" class="no-external"></a></p><a href="./qmds/2a1ba666-70dc-46cf-8b68-33d7f8c913a0.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/2a1ba666-70dc-46cf-8b68-33d7f8c913a0.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/2a1ba666-70dc-46cf-8b68-33d7f8c913a0.html" class="no-external">Fit für den Winter? Tipps zur Vorbereitung für Silvester, Familienfeiern und Co.</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/2a1ba666-70dc-46cf-8b68-33d7f8c913a0.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/2a1ba666-70dc-46cf-8b68-33d7f8c913a0.html" class="no-external">Im Winter ist eskeit, es ist eisig und möchte ich weiß, legt nie auf den Straßen. Es werden auf große Familienfestige feiert und zu Silvest oder knallt es auf ordentlich.…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/2a1ba666-70dc-46cf-8b68-33d7f8c913a0.html" class="no-external">
+<div class="listing-date">
+Nov 27, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-listing-date-sort="1576623600000" data-listing-file-modified-sort="1736558990052" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1395">
+<div class="thumbnail">
+<p><a href="./qmds/d0dc835b-e3f1-4d47-98d2-c116173ea3d0.html" class="no-external"></a></p><a href="./qmds/d0dc835b-e3f1-4d47-98d2-c116173ea3d0.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/d0dc835b-e3f1-4d47-98d2-c116173ea3d0.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/d0dc835b-e3f1-4d47-98d2-c116173ea3d0.html" class="no-external">Persönlicher Einblick - WINTERPAUSE des Welpen und Junghunde Podcasts bis 8.1.2020</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/d0dc835b-e3f1-4d47-98d2-c116173ea3d0.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/d0dc835b-e3f1-4d47-98d2-c116173ea3d0.html" class="no-external">Hallo ihr Lieben, leider keine richtige Podcastfolge heute, sondern ein kleiner Einblick in mein Privatleben bzw. in den Ausblick der nächsten Podcast Episode und der…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/d0dc835b-e3f1-4d47-98d2-c116173ea3d0.html" class="no-external">
+<div class="listing-date">
+Dec 18, 2019
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="25" data-listing-date-sort="1578438000000" data-listing-file-modified-sort="1736558990040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1980">
+<div class="thumbnail">
+<p><a href="./qmds/7b2ddce6-8b5c-4a7b-ae7b-e743ff0340aa.html" class="no-external"></a></p><a href="./qmds/7b2ddce6-8b5c-4a7b-ae7b-e743ff0340aa.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/7b2ddce6-8b5c-4a7b-ae7b-e743ff0340aa.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/7b2ddce6-8b5c-4a7b-ae7b-e743ff0340aa.html" class="no-external">Gefahren im Winter für Welpen und Junghunde</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/7b2ddce6-8b5c-4a7b-ae7b-e743ff0340aa.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/7b2ddce6-8b5c-4a7b-ae7b-e743ff0340aa.html" class="no-external">Die allermeißenden Hunde finden Schnee Wunderwunderwunderbar. Und wenn man junge Hunde dabei beobachtet, wie sie in Schneherum, Treuen und Spielen, ich glaube, es gibt nicht…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/7b2ddce6-8b5c-4a7b-ae7b-e743ff0340aa.html" class="no-external">
+<div class="listing-date">
+Jan 8, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="26" data-listing-date-sort="1579042800000" data-listing-file-modified-sort="1736558990039" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5121">
+<div class="thumbnail">
+<p><a href="./qmds/6b6d9302-7cba-4063-b81b-9c55fd6fc417.html" class="no-external"></a></p><a href="./qmds/6b6d9302-7cba-4063-b81b-9c55fd6fc417.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/6b6d9302-7cba-4063-b81b-9c55fd6fc417.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/6b6d9302-7cba-4063-b81b-9c55fd6fc417.html" class="no-external">Rasseportrait Husky versus Malamute</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/6b6d9302-7cba-4063-b81b-9c55fd6fc417.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/6b6d9302-7cba-4063-b81b-9c55fd6fc417.html" class="no-external">Hallo, heute geht es um den Vergleich. Haski wäre so’s Malamut. Der sie bierische Haski und der Alaskan Malamut sind beide typische Winterhunde oder Winterhundrasen. Und die…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/6b6d9302-7cba-4063-b81b-9c55fd6fc417.html" class="no-external">
+<div class="listing-date">
+Jan 15, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="27" data-listing-date-sort="1580252400000" data-listing-file-modified-sort="1736558990054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="34" data-listing-word-count-sort="6778">
+<div class="thumbnail">
+<p><a href="./qmds/fb145927-ccfc-4b92-96c5-a2602486f104.html" class="no-external"></a></p><a href="./qmds/fb145927-ccfc-4b92-96c5-a2602486f104.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/fb145927-ccfc-4b92-96c5-a2602486f104.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/fb145927-ccfc-4b92-96c5-a2602486f104.html" class="no-external">Interview Tierarztbesuche mit Welpe oder Junghund - wann, wie oft, wozu?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/fb145927-ccfc-4b92-96c5-a2602486f104.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/fb145927-ccfc-4b92-96c5-a2602486f104.html" class="no-external">Oh, ich bin aufgeregt heute. Ist das allererst Interview in Podcast optimal in St.&nbsp;Und zwar Interview, ich heite die Tierärztin Magisterklaude, plastic und wir besprechen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/fb145927-ccfc-4b92-96c5-a2602486f104.html" class="no-external">
+<div class="listing-date">
+Jan 29, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="28" data-listing-date-sort="1582671600000" data-listing-file-modified-sort="1736558990041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3529">
+<div class="thumbnail">
+<p><a href="./qmds/81bbf5fb-c08f-4b95-9217-3651a98a1443.html" class="no-external"></a></p><a href="./qmds/81bbf5fb-c08f-4b95-9217-3651a98a1443.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/81bbf5fb-c08f-4b95-9217-3651a98a1443.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/81bbf5fb-c08f-4b95-9217-3651a98a1443.html" class="no-external">Bereit für einen 2. Hund?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/81bbf5fb-c08f-4b95-9217-3651a98a1443.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/81bbf5fb-c08f-4b95-9217-3651a98a1443.html" class="no-external">Es ist eine absolute schlechte Idee, seinem ersten Hund einfach einen Welpen vor den Alters setzen und darauf zu hoffen, dass schon alles gut werden wird. Wir Menschen…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/81bbf5fb-c08f-4b95-9217-3651a98a1443.html" class="no-external">
+<div class="listing-date">
+Feb 26, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="29" data-listing-date-sort="1584054000000" data-listing-file-modified-sort="1736558990036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2608">
+<div class="thumbnail">
+<p><a href="./qmds/52205cb2-464e-41c8-a817-bccb4502b4a0.html" class="no-external"></a></p><a href="./qmds/52205cb2-464e-41c8-a817-bccb4502b4a0.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/52205cb2-464e-41c8-a817-bccb4502b4a0.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/52205cb2-464e-41c8-a817-bccb4502b4a0.html" class="no-external">Corona-Virus und der Umgang mit unseren Hunden</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/52205cb2-464e-41c8-a817-bccb4502b4a0.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/52205cb2-464e-41c8-a817-bccb4502b4a0.html" class="no-external">Hallehello und Willkommen zu dieser Podcastfolge. Heute wird es ernst, wenn ich möchte über das neue Coronavirus sprechen, dass uns derzeit beherrscht, die Medien beherrscht…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/52205cb2-464e-41c8-a817-bccb4502b4a0.html" class="no-external">
+<div class="listing-date">
+Mar 13, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="30" data-listing-date-sort="1585090800000" data-listing-file-modified-sort="1736558990033" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2439">
+<div class="thumbnail">
+<p><a href="./qmds/3fc4a1a4-64cc-4577-8067-34ee53404d87.html" class="no-external"></a></p><a href="./qmds/3fc4a1a4-64cc-4577-8067-34ee53404d87.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/3fc4a1a4-64cc-4577-8067-34ee53404d87.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/3fc4a1a4-64cc-4577-8067-34ee53404d87.html" class="no-external">Corona-Krise mit Hund und was wir daraus machen</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/3fc4a1a4-64cc-4577-8067-34ee53404d87.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/3fc4a1a4-64cc-4577-8067-34ee53404d87.html" class="no-external">Ja, Halle, Halle, hello. Ich hoffe es geht dir und deinem Hund gut. Langsam gewinnen wir Menschen uns an den neuen Rhythmus und versuchen uns gut wie möglich an die neue…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/3fc4a1a4-64cc-4577-8067-34ee53404d87.html" class="no-external">
+<div class="listing-date">
+Mar 25, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="31" data-listing-date-sort="1585864800000" data-listing-file-modified-sort="1736558990032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41" data-listing-word-count-sort="8079">
+<div class="thumbnail">
+<p><a href="./qmds/25feb783-48c4-447c-a4b0-a57d414897d0.html" class="no-external"></a></p><a href="./qmds/25feb783-48c4-447c-a4b0-a57d414897d0.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/25feb783-48c4-447c-a4b0-a57d414897d0.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/25feb783-48c4-447c-a4b0-a57d414897d0.html" class="no-external">Hundebegegnungen - 5 fatale Fehler</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/25feb783-48c4-447c-a4b0-a57d414897d0.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/25feb783-48c4-447c-a4b0-a57d414897d0.html" class="no-external">Hallo und herzlich willkommen zu dieser Podcast Folge. Heute wird sich alles um das Thema “Hundebegäden” in Drehn. Und zwar rede ich nicht alleine, sondern ich habe einen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/25feb783-48c4-447c-a4b0-a57d414897d0.html" class="no-external">
+<div class="listing-date">
+Apr 3, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="32" data-listing-date-sort="1587765600000" data-listing-file-modified-sort="1736558990030" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5676">
+<div class="thumbnail">
+<p><a href="./qmds/0a7b8404-7462-4050-91d5-e12f0c97811f.html" class="no-external"></a></p><a href="./qmds/0a7b8404-7462-4050-91d5-e12f0c97811f.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/0a7b8404-7462-4050-91d5-e12f0c97811f.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/0a7b8404-7462-4050-91d5-e12f0c97811f.html" class="no-external">Was du als Mensch brauchst, um mit einem Hund glücklich zu werden.</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/0a7b8404-7462-4050-91d5-e12f0c97811f.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/0a7b8404-7462-4050-91d5-e12f0c97811f.html" class="no-external">Als guter Mund im Mensch fragt man sich, wie kann ich meine nun glücklich machen? Als Werdin doch im Menschen sollte man sich fragen, was brauche ich, um mit einem Mund…<em></em><em></em><em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/0a7b8404-7462-4050-91d5-e12f0c97811f.html" class="no-external">
+<div class="listing-date">
+Apr 25, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="33" data-listing-date-sort="1589320800000" data-listing-file-modified-sort="1736558990044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3179">
+<div class="thumbnail">
+<p><a href="./qmds/9acd2efc-d9e4-4b9a-bb96-968ec91933c3.html" class="no-external"></a></p><a href="./qmds/9acd2efc-d9e4-4b9a-bb96-968ec91933c3.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/9acd2efc-d9e4-4b9a-bb96-968ec91933c3.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/9acd2efc-d9e4-4b9a-bb96-968ec91933c3.html" class="no-external">Rasseportrait der Dackel</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/9acd2efc-d9e4-4b9a-bb96-968ec91933c3.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/9acd2efc-d9e4-4b9a-bb96-968ec91933c3.html" class="no-external">Hallo und herzlich willkommen in meinem Podcast “Optimal ins Leben”. Ich bin Lisa stolzig nach und ich unterstütze Menschen dabei in Hund optimal in ihren Alltag zu…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/9acd2efc-d9e4-4b9a-bb96-968ec91933c3.html" class="no-external">
+<div class="listing-date">
+May 13, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="34" data-listing-date-sort="1591221600000" data-listing-file-modified-sort="1736558990053" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2676">
+<div class="thumbnail">
+<p><a href="./qmds/e6386077-6870-45bf-86b7-ab460b4b4065.html" class="no-external"></a></p><a href="./qmds/e6386077-6870-45bf-86b7-ab460b4b4065.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/e6386077-6870-45bf-86b7-ab460b4b4065.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/e6386077-6870-45bf-86b7-ab460b4b4065.html" class="no-external">Die richtige Auslastung finden</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/e6386077-6870-45bf-86b7-ab460b4b4065.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/e6386077-6870-45bf-86b7-ab460b4b4065.html" class="no-external">Die richtige Auslastung. Jede Sprichte rüber und viele Menschen möchten in Hund gut auslasten. Das ist das überhaupt. Ein gut ausgelasse Domingon ist für mich eine Füllte…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/e6386077-6870-45bf-86b7-ab460b4b4065.html" class="no-external">
+<div class="listing-date">
+Jun 4, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="35" data-listing-date-sort="1599688800000" data-listing-file-modified-sort="1736558990043" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41" data-listing-word-count-sort="8197">
+<div class="thumbnail">
+<p><a href="./qmds/8ce1d608-f1b2-4ab5-8adb-a94dc97a45bb.html" class="no-external"></a></p><a href="./qmds/8ce1d608-f1b2-4ab5-8adb-a94dc97a45bb.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/8ce1d608-f1b2-4ab5-8adb-a94dc97a45bb.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/8ce1d608-f1b2-4ab5-8adb-a94dc97a45bb.html" class="no-external">Wandern mit Hund - Vorbereitung ist alles</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/8ce1d608-f1b2-4ab5-8adb-a94dc97a45bb.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/8ce1d608-f1b2-4ab5-8adb-a94dc97a45bb.html" class="no-external">Wandern mit Hund. Viele Leute wünschen sich einen treuen Kleider beim Wandern und oft haben Menschen das schon von Anfang an im Kopf. Ja mit meinem Weltmoderium Hund werde…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/8ce1d608-f1b2-4ab5-8adb-a94dc97a45bb.html" class="no-external">
+<div class="listing-date">
+Sep 10, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="36" data-listing-date-sort="1600639200000" data-listing-file-modified-sort="1736558990038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4713">
+<div class="thumbnail">
+<p><a href="./qmds/60841489-f898-4b32-aece-4a15f51f7b36.html" class="no-external"></a></p><a href="./qmds/60841489-f898-4b32-aece-4a15f51f7b36.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/60841489-f898-4b32-aece-4a15f51f7b36.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/60841489-f898-4b32-aece-4a15f51f7b36.html" class="no-external">Geschirr anziehen bei Welpen oder Junghunden</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/60841489-f898-4b32-aece-4a15f51f7b36.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/60841489-f898-4b32-aece-4a15f51f7b36.html" class="no-external">Hilfe, mein Welp belastigt das Geschirn nicht anlegen. Diese Aussage her ist sehr oft von meinen Kunden und ich sehe das auch bei den Welpen, das viele damit ein Problem…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/60841489-f898-4b32-aece-4a15f51f7b36.html" class="no-external">
+<div class="listing-date">
+Sep 21, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="37" data-listing-date-sort="1601416800000" data-listing-file-modified-sort="1736558990052" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="31" data-listing-word-count-sort="6013">
+<div class="thumbnail">
+<p><a href="./qmds/e30c566b-41d6-40ac-995e-b7e1edd466b5.html" class="no-external"></a></p><a href="./qmds/e30c566b-41d6-40ac-995e-b7e1edd466b5.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/e30c566b-41d6-40ac-995e-b7e1edd466b5.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/e30c566b-41d6-40ac-995e-b7e1edd466b5.html" class="no-external">Rassekunde, Erbkrankheiten und warum man genau hinschauen sollte</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/e30c566b-41d6-40ac-995e-b7e1edd466b5.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/e30c566b-41d6-40ac-995e-b7e1edd466b5.html" class="no-external">Warum gibt es eigentlich so viele Krankenhunde auf diese Welt, trotz der guten medizinischen Versorgung? Wie sind Rassen, wie wir sie heute kennen und das Zucht geschehen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/e30c566b-41d6-40ac-995e-b7e1edd466b5.html" class="no-external">
+<div class="listing-date">
+Sep 30, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="38" data-listing-date-sort="1604790000000" data-listing-file-modified-sort="1736558990051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="35" data-listing-word-count-sort="6970">
+<div class="thumbnail">
+<p><a href="./qmds/c754c2c0-3d6d-42f5-aa8d-64544cea41f7.html" class="no-external"></a></p><a href="./qmds/c754c2c0-3d6d-42f5-aa8d-64544cea41f7.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/c754c2c0-3d6d-42f5-aa8d-64544cea41f7.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/c754c2c0-3d6d-42f5-aa8d-64544cea41f7.html" class="no-external">Erstes Silvester mit Hund - Vorbereitung ist alles!</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/c754c2c0-3d6d-42f5-aa8d-64544cea41f7.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/c754c2c0-3d6d-42f5-aa8d-64544cea41f7.html" class="no-external">
+<li>Musik * Hallo und herzlich Willkommen zu diesem Podcast Volter. Du fragst dich vielleicht, warum du da jetzt schon eine Silvesterfolge hern sollst oder warum sie jetzt…<em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/c754c2c0-3d6d-42f5-aa8d-64544cea41f7.html" class="no-external">
+<div class="listing-date">
+Nov 8, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="39" data-listing-date-sort="1606950000000" data-listing-file-modified-sort="1736558990030" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3060">
+<div class="thumbnail">
+<p><a href="./qmds/0bda04cc-a2c6-46a1-b5d7-144f10a919cf.html" class="no-external"></a></p><a href="./qmds/0bda04cc-a2c6-46a1-b5d7-144f10a919cf.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/0bda04cc-a2c6-46a1-b5d7-144f10a919cf.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/0bda04cc-a2c6-46a1-b5d7-144f10a919cf.html" class="no-external">Umzug mit Hund - Tipps für einen entspannten Umzug</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/0bda04cc-a2c6-46a1-b5d7-144f10a919cf.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/0bda04cc-a2c6-46a1-b5d7-144f10a919cf.html" class="no-external">Als wäre umziehen, nicht schon anstrengend genug, ist umziehen mit Hund eine richtige Herausforderung. In dieser Podcast folge wir das darum gehen, was du tun kannst, wenn…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/0bda04cc-a2c6-46a1-b5d7-144f10a919cf.html" class="no-external">
+<div class="listing-date">
+Dec 3, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="40" data-listing-date-sort="1608246000000" data-listing-file-modified-sort="1736558990044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2387">
+<div class="thumbnail">
+<p><a href="./qmds/960e433d-a415-46d2-9279-87fbe619c7e8.html" class="no-external"></a></p><a href="./qmds/960e433d-a415-46d2-9279-87fbe619c7e8.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/960e433d-a415-46d2-9279-87fbe619c7e8.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/960e433d-a415-46d2-9279-87fbe619c7e8.html" class="no-external">Welpenstudie - Einblicke in meine Masterarbeit</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/960e433d-a415-46d2-9279-87fbe619c7e8.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/960e433d-a415-46d2-9279-87fbe619c7e8.html" class="no-external">Heute war der Tag meiner Defension und ich kann es immer noch gar nicht fassen. Ich habe doch tatsächlich mit dem heutigen Tag mein Studium abgeschlossen. Ja! Und viele…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/960e433d-a415-46d2-9279-87fbe619c7e8.html" class="no-external">
+<div class="listing-date">
+Dec 18, 2020
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="41" data-listing-date-sort="1614121200000" data-listing-file-modified-sort="1736558990040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2494">
+<div class="thumbnail">
+<p><a href="./qmds/80925a70-88c5-4411-bbc4-cadaa1346db7.html" class="no-external"></a></p><a href="./qmds/80925a70-88c5-4411-bbc4-cadaa1346db7.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/80925a70-88c5-4411-bbc4-cadaa1346db7.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/80925a70-88c5-4411-bbc4-cadaa1346db7.html" class="no-external">Rückruf - die 3 häufigsten Fehler im Training</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/80925a70-88c5-4411-bbc4-cadaa1346db7.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/80925a70-88c5-4411-bbc4-cadaa1346db7.html" class="no-external">Paula? Paula? Hierher. Paula, komm. Paula? Paula? Komm sofort her. Das mag vielleicht lustig klingen. Ist es aber gar nicht. Ein Rekrof kann Leben retten. Zum Beispiel…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/80925a70-88c5-4411-bbc4-cadaa1346db7.html" class="no-external">
+<div class="listing-date">
+Feb 24, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="42" data-listing-date-sort="1616799600000" data-listing-file-modified-sort="1736558990033" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2627">
+<div class="thumbnail">
+<p><a href="./qmds/3db54550-a594-4fdc-aad2-bbafa8cd92d6.html" class="no-external"></a></p><a href="./qmds/3db54550-a594-4fdc-aad2-bbafa8cd92d6.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/3db54550-a594-4fdc-aad2-bbafa8cd92d6.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/3db54550-a594-4fdc-aad2-bbafa8cd92d6.html" class="no-external">In der Ruhe liegt die Kraft</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/3db54550-a594-4fdc-aad2-bbafa8cd92d6.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/3db54550-a594-4fdc-aad2-bbafa8cd92d6.html" class="no-external">Ein Jahr Corona. Ein Jahr Ausgangssperren. Ein Jahr mehr oder weniger keine Restaurantbesuche. Ganz ganz viel Homeoffice kaum öffentliches Leben. Und so etwas wäre die…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/3db54550-a594-4fdc-aad2-bbafa8cd92d6.html" class="no-external">
+<div class="listing-date">
+Mar 27, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="43" data-listing-date-sort="1622584800000" data-listing-file-modified-sort="1736558990053" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1698">
+<div class="thumbnail">
+<p><a href="./qmds/f00aa06b-b7f4-4e6b-b0c8-e7226311b541.html" class="no-external"></a></p><a href="./qmds/f00aa06b-b7f4-4e6b-b0c8-e7226311b541.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/f00aa06b-b7f4-4e6b-b0c8-e7226311b541.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/f00aa06b-b7f4-4e6b-b0c8-e7226311b541.html" class="no-external">Welpenmafia - was seit der Pandemie los ist</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/f00aa06b-b7f4-4e6b-b0c8-e7226311b541.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/f00aa06b-b7f4-4e6b-b0c8-e7226311b541.html" class="no-external">Nach Drogen und Waffenhandel ist illegalatierhandel das Lukrativste illegale Geschäft. Es gibt verbriegähnliche Produktion von welken Füden Deutschmarkt, besonders für die…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/f00aa06b-b7f4-4e6b-b0c8-e7226311b541.html" class="no-external">
+<div class="listing-date">
+Jun 2, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="44" data-listing-date-sort="1623880800000" data-listing-file-modified-sort="1736558990030" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="30" data-listing-word-count-sort="5851">
+<div class="thumbnail">
+<p><a href="./qmds/0da928ed-de48-4180-91b0-d7e140153c6d.html" class="no-external"></a></p><a href="./qmds/0da928ed-de48-4180-91b0-d7e140153c6d.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/0da928ed-de48-4180-91b0-d7e140153c6d.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/0da928ed-de48-4180-91b0-d7e140153c6d.html" class="no-external">Unseriöses Vermehren und seine Folgen - 3 bewegende Geschichten</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/0da928ed-de48-4180-91b0-d7e140153c6d.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/0da928ed-de48-4180-91b0-d7e140153c6d.html" class="no-external">Knut, Kira und Bobbië. Knut und Kira waren von vermeintlich sehr riesend sich dann. Bobbië aus dem Tierschutz aber mutmaßlich auch ursprünglich aus einer Welpen verpreck.…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/0da928ed-de48-4180-91b0-d7e140153c6d.html" class="no-external">
+<div class="listing-date">
+Jun 17, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="45" data-listing-date-sort="1625090400000" data-listing-file-modified-sort="1736558990047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2553">
+<div class="thumbnail">
+<p><a href="./qmds/be80ae45-d65b-4d8a-b00b-9b2d758aba81.html" class="no-external"></a></p><a href="./qmds/be80ae45-d65b-4d8a-b00b-9b2d758aba81.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/be80ae45-d65b-4d8a-b00b-9b2d758aba81.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/be80ae45-d65b-4d8a-b00b-9b2d758aba81.html" class="no-external">Maulkorbtraining - ein früher Einstieg lohnt sich</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/be80ae45-d65b-4d8a-b00b-9b2d758aba81.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/be80ae45-d65b-4d8a-b00b-9b2d758aba81.html" class="no-external">Oh, der Arm, aber Hund muss eine Malkopf tragen. Was hat er denn angestellt? Das ist der Tick, will er. Ja, geben Sie doch den Malkopf runter, der Hund kann ja nicht…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/be80ae45-d65b-4d8a-b00b-9b2d758aba81.html" class="no-external">
+<div class="listing-date">
+Jul 1, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="46" data-listing-date-sort="1626300000000" data-listing-file-modified-sort="1736558990047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="40" data-listing-word-count-sort="7899">
+<div class="thumbnail">
+<p><a href="./qmds/c41d20f4-160d-4b9a-8048-6a5ef494a47c.html" class="no-external"></a></p><a href="./qmds/c41d20f4-160d-4b9a-8048-6a5ef494a47c.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/c41d20f4-160d-4b9a-8048-6a5ef494a47c.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/c41d20f4-160d-4b9a-8048-6a5ef494a47c.html" class="no-external">Interview über Welpenmafia und Tierheimhunde</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/c41d20f4-160d-4b9a-8048-6a5ef494a47c.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/c41d20f4-160d-4b9a-8048-6a5ef494a47c.html" class="no-external">Welpen Mafia. Darüber habe ich bereits ausführlich in der Prattkastfolge 43 gesprochen. Heute beleuchten wir das Thema aus Sicht von Elena. Elena ist hier am Leinterin des…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/c41d20f4-160d-4b9a-8048-6a5ef494a47c.html" class="no-external">
+<div class="listing-date">
+Jul 15, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="47" data-listing-date-sort="1629324000000" data-listing-file-modified-sort="1736558990040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4669">
+<div class="thumbnail">
+<p><a href="./qmds/70ff5572-56c9-4a26-87ae-3e8c6112936c.html" class="no-external"></a></p><a href="./qmds/70ff5572-56c9-4a26-87ae-3e8c6112936c.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/70ff5572-56c9-4a26-87ae-3e8c6112936c.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/70ff5572-56c9-4a26-87ae-3e8c6112936c.html" class="no-external">Unsicherheit - Wohlbefinden von Welpen / jungen Hunden steigern</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/70ff5572-56c9-4a26-87ae-3e8c6112936c.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/70ff5572-56c9-4a26-87ae-3e8c6112936c.html" class="no-external">Wir haben es in der Hand die Erfahrungen umsache, umsache, um zu steuern und auch ausgewählte Erlebnisse wohl befinden zu steigern. Vol befinden ist die Qualität der…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/70ff5572-56c9-4a26-87ae-3e8c6112936c.html" class="no-external">
+<div class="listing-date">
+Aug 19, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="48" data-listing-date-sort="1630965600000" data-listing-file-modified-sort="1736558990037" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2311">
+<div class="thumbnail">
+<p><a href="./qmds/58af659b-7c2a-4bb0-89ce-1c792edf35f7.html" class="no-external"></a></p><a href="./qmds/58af659b-7c2a-4bb0-89ce-1c792edf35f7.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/58af659b-7c2a-4bb0-89ce-1c792edf35f7.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/58af659b-7c2a-4bb0-89ce-1c792edf35f7.html" class="no-external">Probleme der Hundezucht - Wissen, Fokus, Vermittlung</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/58af659b-7c2a-4bb0-89ce-1c792edf35f7.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/58af659b-7c2a-4bb0-89ce-1c792edf35f7.html" class="no-external">In der modernen Hunde zucht gibt es Probleme. Zum einen ist das fehlendes Wissen über Verpaarungen und Aufzucht. Vorkus, der häufig auf äußlichen Erscheinungsbildern liegt…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/58af659b-7c2a-4bb0-89ce-1c792edf35f7.html" class="no-external">
+<div class="listing-date">
+Sep 7, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="49" data-listing-date-sort="1632261600000" data-listing-file-modified-sort="1736558990052" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="54" data-listing-word-count-sort="10764">
+<div class="thumbnail">
+<p><a href="./qmds/d0d9a9d5-b4f1-43dc-be8e-f31e39a44ff1.html" class="no-external"></a></p><a href="./qmds/d0d9a9d5-b4f1-43dc-be8e-f31e39a44ff1.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/d0d9a9d5-b4f1-43dc-be8e-f31e39a44ff1.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/d0d9a9d5-b4f1-43dc-be8e-f31e39a44ff1.html" class="no-external">Interview Mein Leben mit einem Mops</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/d0d9a9d5-b4f1-43dc-be8e-f31e39a44ff1.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/d0d9a9d5-b4f1-43dc-be8e-f31e39a44ff1.html" class="no-external">Für mich war es absolut normal, dass es die Optik des Moopses. Die sind so, die sehen so aus, weil ich da nicht pro Banach gedacht und wollte, auch nicht feint hat, aber…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/d0d9a9d5-b4f1-43dc-be8e-f31e39a44ff1.html" class="no-external">
+<div class="listing-date">
+Sep 22, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="50" data-listing-date-sort="1635807600000" data-listing-file-modified-sort="1736558990038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2331">
+<div class="thumbnail">
+<p><a href="./qmds/5c75149c-8e61-4404-9a96-dcfec535aedb.html" class="no-external"></a></p><a href="./qmds/5c75149c-8e61-4404-9a96-dcfec535aedb.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/5c75149c-8e61-4404-9a96-dcfec535aedb.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/5c75149c-8e61-4404-9a96-dcfec535aedb.html" class="no-external">Schnüffelprofis - was Nasenarbeit mit unseren Hunden macht</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/5c75149c-8e61-4404-9a96-dcfec535aedb.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/5c75149c-8e61-4404-9a96-dcfec535aedb.html" class="no-external">Schnöffeln ist der Weg der Hund der die Welt zu ergründen, sie zu verstehen und zu erforschen. Was die Wissenschaftsund Schnöffeln sagt und was naßen Arbeit mit unseren…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/5c75149c-8e61-4404-9a96-dcfec535aedb.html" class="no-external">
+<div class="listing-date">
+Nov 2, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="51" data-listing-date-sort="1637103600000" data-listing-file-modified-sort="1736558990039" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3212">
+<div class="thumbnail">
+<p><a href="./qmds/6b5e13dc-65f6-4ded-a2bb-db6387c9fec9.html" class="no-external"></a></p><a href="./qmds/6b5e13dc-65f6-4ded-a2bb-db6387c9fec9.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/6b5e13dc-65f6-4ded-a2bb-db6387c9fec9.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/6b5e13dc-65f6-4ded-a2bb-db6387c9fec9.html" class="no-external">Hundebuddies - welche Art von Hundekontakt Welpen und Junghunde benötigen</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/6b5e13dc-65f6-4ded-a2bb-db6387c9fec9.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/6b5e13dc-65f6-4ded-a2bb-db6387c9fec9.html" class="no-external">
+<li>Musik * Hallo und herzlich willkommen zum Welpen und Junge von Podcast, optimal ins Leben. Mit einer neuen Musik. Ich dachte, es ist Zeit für das Neues. Und frem ich, dass…<em></em></li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/6b5e13dc-65f6-4ded-a2bb-db6387c9fec9.html" class="no-external">
+<div class="listing-date">
+Nov 17, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="52" data-listing-date-sort="1638313200000" data-listing-file-modified-sort="1736558990052" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4896">
+<div class="thumbnail">
+<p><a href="./qmds/de2728f4-e21a-461d-96c5-ebad04a4e2d2.html" class="no-external"></a></p><a href="./qmds/de2728f4-e21a-461d-96c5-ebad04a4e2d2.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/de2728f4-e21a-461d-96c5-ebad04a4e2d2.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/de2728f4-e21a-461d-96c5-ebad04a4e2d2.html" class="no-external">Interview über Junghundegruppen mit Dr.&nbsp;Janey May</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/de2728f4-e21a-461d-96c5-ebad04a4e2d2.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/de2728f4-e21a-461d-96c5-ebad04a4e2d2.html" class="no-external">
+<li>Musik * Hallo und herzlich Willkommen bei optimalen Leben, dem Welpen und Junge von Podcast. Ich bin Lisa Stahlzlechner und ich spreche heute mit der TRC-Docct.t.m. Über…</li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/de2728f4-e21a-461d-96c5-ebad04a4e2d2.html" class="no-external">
+<div class="listing-date">
+Dec 1, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="53" data-listing-date-sort="1639522800000" data-listing-file-modified-sort="1736558990044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="39" data-listing-word-count-sort="7610">
+<div class="thumbnail">
+<p><a href="./qmds/905e2798-5fea-44df-a6b7-ae67d727a851.html" class="no-external"></a></p><a href="./qmds/905e2798-5fea-44df-a6b7-ae67d727a851.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/905e2798-5fea-44df-a6b7-ae67d727a851.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/905e2798-5fea-44df-a6b7-ae67d727a851.html" class="no-external">Bonusfolge Hundeversicherung - Fragen an Expertinnen</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/905e2798-5fea-44df-a6b7-ae67d727a851.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/905e2798-5fea-44df-a6b7-ae67d727a851.html" class="no-external">
+<li>Musik * Hallo und herzlich willkommen zu dieser kleinen Zusatzfolge. Ich habe vor kurzem eine Umfrage auf Instagram zum Thema Tierversicherung erstellt und mich auch…</li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/905e2798-5fea-44df-a6b7-ae67d727a851.html" class="no-external">
+<div class="listing-date">
+Dec 15, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="54" data-listing-date-sort="1639522800000" data-listing-file-modified-sort="1736558990032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3131">
+<div class="thumbnail">
+<p><a href="./qmds/3aa33b34-59c1-44aa-85f4-a545a9dc1c02.html" class="no-external"></a></p><a href="./qmds/3aa33b34-59c1-44aa-85f4-a545a9dc1c02.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/3aa33b34-59c1-44aa-85f4-a545a9dc1c02.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/3aa33b34-59c1-44aa-85f4-a545a9dc1c02.html" class="no-external">Angstphasen bei Welpen und Junghunden</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/3aa33b34-59c1-44aa-85f4-a545a9dc1c02.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/3aa33b34-59c1-44aa-85f4-a545a9dc1c02.html" class="no-external">Nicht selten erzählen wir meine Kund innen von innen jungen Hunden. Die plötzlich Angst vor Dingen haben, die zuvor kein Problem waren. Damit sind es nicht alleine, denn…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/3aa33b34-59c1-44aa-85f4-a545a9dc1c02.html" class="no-external">
+<div class="listing-date">
+Dec 15, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="55" data-listing-date-sort="1641337200000" data-listing-file-modified-sort="1736558990040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3980">
+<div class="thumbnail">
+<p><a href="./qmds/7194bb44-1e26-4b03-84ab-51e051b008d6.html" class="no-external"></a></p><a href="./qmds/7194bb44-1e26-4b03-84ab-51e051b008d6.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/7194bb44-1e26-4b03-84ab-51e051b008d6.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/7194bb44-1e26-4b03-84ab-51e051b008d6.html" class="no-external">Ziele im Hundetraining - Erwartungen, Rückschritte und Erreichen von Zielen</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/7194bb44-1e26-4b03-84ab-51e051b008d6.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/7194bb44-1e26-4b03-84ab-51e051b008d6.html" class="no-external">
+<li>Musik * Hallo und herzlich willkommen im neuen Jahr in Jahr 2022. Ich hoffe, sehr das Dundemontus, die beide gut. In das neue Jahrkel gut sei, dass es die Gewester gute…</li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/7194bb44-1e26-4b03-84ab-51e051b008d6.html" class="no-external">
+<div class="listing-date">
+Jan 5, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="56" data-listing-date-sort="1643151600000" data-listing-file-modified-sort="1736558990046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3336">
+<div class="thumbnail">
+<p><a href="./qmds/b503bd1a-bb0f-464a-b300-9cc89d86610c.html" class="no-external"></a></p><a href="./qmds/b503bd1a-bb0f-464a-b300-9cc89d86610c.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/b503bd1a-bb0f-464a-b300-9cc89d86610c.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/b503bd1a-bb0f-464a-b300-9cc89d86610c.html" class="no-external">Die Entwicklungsphasen von Welpen</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/b503bd1a-bb0f-464a-b300-9cc89d86610c.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/b503bd1a-bb0f-464a-b300-9cc89d86610c.html" class="no-external">
+<li>Musik * Hallo und herzlich willkommen bei optimalen Inselben dem Welpen und Jungenhöhne Podcast. Mann am Wesley Stolzlechner bin Verhaltensbiologie und Trainerin…<em></em><em></em></li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/b503bd1a-bb0f-464a-b300-9cc89d86610c.html" class="no-external">
+<div class="listing-date">
+Jan 26, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="57" data-listing-date-sort="1644966000000" data-listing-file-modified-sort="1736558990038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="32" data-listing-word-count-sort="6386">
+<div class="thumbnail">
+<p><a href="./qmds/5cafb8d8-1fb4-4243-98df-1074b12c7470.html" class="no-external"></a></p><a href="./qmds/5cafb8d8-1fb4-4243-98df-1074b12c7470.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/5cafb8d8-1fb4-4243-98df-1074b12c7470.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/5cafb8d8-1fb4-4243-98df-1074b12c7470.html" class="no-external">Interview Stress bei Welpen und Junghunden</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/5cafb8d8-1fb4-4243-98df-1074b12c7470.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/5cafb8d8-1fb4-4243-98df-1074b12c7470.html" class="no-external">Stress. Was ist Stress? Wie erkennt man Stress und ist jede Art von Stress schlecht? Wir klären heute diese Fragen und noch mehr. Mit Dr.&nbsp;Chene-Mei, Verhaltensthererzchen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/5cafb8d8-1fb4-4243-98df-1074b12c7470.html" class="no-external">
+<div class="listing-date">
+Feb 16, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="58" data-listing-date-sort="1646262000000" data-listing-file-modified-sort="1736558990044" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3680">
+<div class="thumbnail">
+<p><a href="./qmds/9fa36d8a-9910-44a9-b830-2dcccbdd6d01.html" class="no-external"></a></p><a href="./qmds/9fa36d8a-9910-44a9-b830-2dcccbdd6d01.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/9fa36d8a-9910-44a9-b830-2dcccbdd6d01.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/9fa36d8a-9910-44a9-b830-2dcccbdd6d01.html" class="no-external">Ressourcen verteidigen - warum die richtigen Lernerfahrungen von Welpen und Junghunden bereits wichtig sind</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/9fa36d8a-9910-44a9-b830-2dcccbdd6d01.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/9fa36d8a-9910-44a9-b830-2dcccbdd6d01.html" class="no-external">Wir müssen dringend anfangen, die Hunde und ihre Wahrnehmung der Welt von Anfang an ernst nehmen. Horfig wird während der Welten Zeit dieses wichtige Thema völlig übergangen…<em></em><em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/9fa36d8a-9910-44a9-b830-2dcccbdd6d01.html" class="no-external">
+<div class="listing-date">
+Mar 3, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="59" data-listing-date-sort="1648591200000" data-listing-file-modified-sort="1736558990039" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2559">
+<div class="thumbnail">
+<p><a href="./qmds/6df5934b-8b99-4683-83c3-299c3e642c3c.html" class="no-external"></a></p><a href="./qmds/6df5934b-8b99-4683-83c3-299c3e642c3c.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/6df5934b-8b99-4683-83c3-299c3e642c3c.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/6df5934b-8b99-4683-83c3-299c3e642c3c.html" class="no-external">Leben mit Hund - ein Geben und Nehmen</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/6df5934b-8b99-4683-83c3-299c3e642c3c.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/6df5934b-8b99-4683-83c3-299c3e642c3c.html" class="no-external">Ja, das ist dir vermutlich bereits klar, dass die Welchen und Junkunde Zeit anstrengend sein kann. Wenn der langer Synthüffend endlich ankommt, dann stecken wir als Menschen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/6df5934b-8b99-4683-83c3-299c3e642c3c.html" class="no-external">
+<div class="listing-date">
+Mar 30, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="60" data-listing-date-sort="1650319200000" data-listing-file-modified-sort="1736558990035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="40" data-listing-word-count-sort="7948">
+<div class="thumbnail">
+<p><a href="./qmds/4a0a1037-49c3-42be-ab62-4135a5c8aee3.html" class="no-external"></a></p><a href="./qmds/4a0a1037-49c3-42be-ab62-4135a5c8aee3.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/4a0a1037-49c3-42be-ab62-4135a5c8aee3.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/4a0a1037-49c3-42be-ab62-4135a5c8aee3.html" class="no-external">Hund und Katze - über Zusammenführung, Training und Kompatibilität</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/4a0a1037-49c3-42be-ab62-4135a5c8aee3.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/4a0a1037-49c3-42be-ab62-4135a5c8aee3.html" class="no-external">Katzen, Zählen, Nebenhunden, wie wir alle vermutlich wissen zu den beliebtesten Haustien und wir gehen nicht bevontern. Ich habe heute einen ganz bemönen Brotkast nämlich…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/4a0a1037-49c3-42be-ab62-4135a5c8aee3.html" class="no-external">
+<div class="listing-date">
+Apr 19, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="61" data-listing-date-sort="1655848800000" data-listing-file-modified-sort="1736558990051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3036">
+<div class="thumbnail">
+<p><a href="./qmds/c5878451-52e7-4b47-9faf-3361b72fa8d8.html" class="no-external"></a></p><a href="./qmds/c5878451-52e7-4b47-9faf-3361b72fa8d8.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/c5878451-52e7-4b47-9faf-3361b72fa8d8.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/c5878451-52e7-4b47-9faf-3361b72fa8d8.html" class="no-external">Badespaß mit Welpen und Junghunden</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/c5878451-52e7-4b47-9faf-3361b72fa8d8.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/c5878451-52e7-4b47-9faf-3361b72fa8d8.html" class="no-external">[Musik] Wir stellen uns jetzt vor ein Spannt gemeinsam mit unserem Hund am Wasser zu sitzen. Die Wähen jeweils in Ruhe zu beobachten und dabei vielleicht ein Kühlers getränk…<em></em><em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/c5878451-52e7-4b47-9faf-3361b72fa8d8.html" class="no-external">
+<div class="listing-date">
+Jun 22, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="62" data-listing-date-sort="1657058400000" data-listing-file-modified-sort="1736558990034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3522">
+<div class="thumbnail">
+<p><a href="./qmds/465f8905-76f9-495c-ab53-54297bdf22bb.html" class="no-external"></a></p><a href="./qmds/465f8905-76f9-495c-ab53-54297bdf22bb.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/465f8905-76f9-495c-ab53-54297bdf22bb.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/465f8905-76f9-495c-ab53-54297bdf22bb.html" class="no-external">Welpenzeit - mit diesem Fundament überstehst du sie (leicht)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/465f8905-76f9-495c-ab53-54297bdf22bb.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/465f8905-76f9-495c-ab53-54297bdf22bb.html" class="no-external">Die Weltenzeit ist meist anstrengend und etwas anders als wir uns das vorgestellt haben. Doch die gute Nachricht mit der richtigen Basis fühlt sich die Zeit sehr viel…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/465f8905-76f9-495c-ab53-54297bdf22bb.html" class="no-external">
+<div class="listing-date">
+Jul 6, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="63" data-listing-date-sort="1658268000000" data-listing-file-modified-sort="1736558990042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4885">
+<div class="thumbnail">
+<p><a href="./qmds/863d5690-eb5f-4dd4-8777-57174ebfe578.html" class="no-external"></a></p><a href="./qmds/863d5690-eb5f-4dd4-8777-57174ebfe578.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/863d5690-eb5f-4dd4-8777-57174ebfe578.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/863d5690-eb5f-4dd4-8777-57174ebfe578.html" class="no-external">Spezialfolge Eure Fragen an mich!</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/863d5690-eb5f-4dd4-8777-57174ebfe578.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/863d5690-eb5f-4dd4-8777-57174ebfe578.html" class="no-external">
+<li>Musik * Hallo und herzlich Willkommen zu dieser Podcast Folge. Diese wird heute etwas anders sein, also das von mir gewohnt, denn ich werde aufgrund meiner Krankheit, also…<em></em><em></em></li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/863d5690-eb5f-4dd4-8777-57174ebfe578.html" class="no-external">
+<div class="listing-date">
+Jul 20, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="64" data-listing-date-sort="1660687200000" data-listing-file-modified-sort="1736558990034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4061">
+<div class="thumbnail">
+<p><a href="./qmds/43ec2dc4-2452-4d71-8bcc-fe0052013987.html" class="no-external"></a></p><a href="./qmds/43ec2dc4-2452-4d71-8bcc-fe0052013987.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/43ec2dc4-2452-4d71-8bcc-fe0052013987.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/43ec2dc4-2452-4d71-8bcc-fe0052013987.html" class="no-external">Sozialisation - die 3 häufigsten Fehler</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/43ec2dc4-2452-4d71-8bcc-fe0052013987.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/43ec2dc4-2452-4d71-8bcc-fe0052013987.html" class="no-external">
+<li>Musik * Ein Hund begleitet seine Menschen im besten Faller mehr als 15 Jahre. Und der Grundstand für dieses Leben wird während der sogenannten Sozializierungsphase geliegt.…</li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/43ec2dc4-2452-4d71-8bcc-fe0052013987.html" class="no-external">
+<div class="listing-date">
+Aug 17, 2022
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="65" data-listing-date-sort="1687298400000" data-listing-file-modified-sort="1736558990034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5020">
+<div class="thumbnail">
+<p><a href="./qmds/40f491a4-7c31-48ee-8805-07d79b68486d.html" class="no-external"></a></p><a href="./qmds/40f491a4-7c31-48ee-8805-07d79b68486d.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/40f491a4-7c31-48ee-8805-07d79b68486d.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/40f491a4-7c31-48ee-8805-07d79b68486d.html" class="no-external">Wie sich die Hundepersönlichkeit von Anfang an beeinflussen lässt</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/40f491a4-7c31-48ee-8805-07d79b68486d.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/40f491a4-7c31-48ee-8805-07d79b68486d.html" class="no-external">[Musik] Keine Hunde-Pissündigkeit gleich der anderen. Und genau darum, soll es in dieser Partgasfolge gehen. Wie auch bei uns Menschen entsteht die Hunde-Pissündigkeit, die…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/40f491a4-7c31-48ee-8805-07d79b68486d.html" class="no-external">
+<div class="listing-date">
+Jun 21, 2023
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="66" data-listing-date-sort="1688508000000" data-listing-file-modified-sort="1736558990034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3843">
+<div class="thumbnail">
+<p><a href="./qmds/47ab078d-f003-4dd8-882e-0bfc6c4b58fe.html" class="no-external"></a></p><a href="./qmds/47ab078d-f003-4dd8-882e-0bfc6c4b58fe.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/47ab078d-f003-4dd8-882e-0bfc6c4b58fe.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/47ab078d-f003-4dd8-882e-0bfc6c4b58fe.html" class="no-external">So überlebst du die Pubertät!</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/47ab078d-f003-4dd8-882e-0bfc6c4b58fe.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/47ab078d-f003-4dd8-882e-0bfc6c4b58fe.html" class="no-external">
+<li>Musik * So überlebste die Boba Tät. Aber den Tätel habe ich ein bisschen schmunteln müssen und auch überlegt, aber ich habe wirklich so formulieren möchte. Und ja, will…</li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/47ab078d-f003-4dd8-882e-0bfc6c4b58fe.html" class="no-external">
+<div class="listing-date">
+Jul 5, 2023
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="67" data-listing-date-sort="1704582000000" data-listing-file-modified-sort="1736558990036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3772">
+<div class="thumbnail">
+<p><a href="./qmds/508bf475-f327-4286-8969-4fc5e8ecb150.html" class="no-external"></a></p><a href="./qmds/508bf475-f327-4286-8969-4fc5e8ecb150.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/508bf475-f327-4286-8969-4fc5e8ecb150.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/508bf475-f327-4286-8969-4fc5e8ecb150.html" class="no-external">Winterwelpe PRO- und KONTRA-Punkte</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/508bf475-f327-4286-8969-4fc5e8ecb150.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/508bf475-f327-4286-8969-4fc5e8ecb150.html" class="no-external">
+<li>Musik * Winter und Lern schnieckt zusammen ein bisschenliche Weihnachtsakt. Und dann taubt dann noch ein Welper. Das kann doch nur gut werden, oder? Wir belachten heute mal…<em></em><em></em></li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/508bf475-f327-4286-8969-4fc5e8ecb150.html" class="no-external">
+<div class="listing-date">
+Jan 7, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="68" data-listing-date-sort="1706050800000" data-listing-file-modified-sort="1736558990039" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4697">
+<div class="thumbnail">
+<p><a href="./qmds/65f8da93-3e1f-49e2-80cb-275bbd131ed6.html" class="no-external"></a></p><a href="./qmds/65f8da93-3e1f-49e2-80cb-275bbd131ed6.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/65f8da93-3e1f-49e2-80cb-275bbd131ed6.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/65f8da93-3e1f-49e2-80cb-275bbd131ed6.html" class="no-external">Maxi, Assistenzhund to be</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/65f8da93-3e1f-49e2-80cb-275bbd131ed6.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/65f8da93-3e1f-49e2-80cb-275bbd131ed6.html" class="no-external">
+<li>Musik * Dies Folge wird das persönlich her, denn ich erzähl von unserem Scheidung passen Rassel-Terehenden Maxi für ein Jahr Berns aufzunehmen. Die später mal ein Assistenz…</li></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/65f8da93-3e1f-49e2-80cb-275bbd131ed6.html" class="no-external">
+<div class="listing-date">
+Jan 24, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="69" data-listing-date-sort="1707346800000" data-listing-file-modified-sort="1736558990030" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="34" data-listing-word-count-sort="6762">
+<div class="thumbnail">
+<p><a href="./qmds/08672b6d-5c59-47fc-9e02-ed43f458f328.html" class="no-external"></a></p><a href="./qmds/08672b6d-5c59-47fc-9e02-ed43f458f328.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/08672b6d-5c59-47fc-9e02-ed43f458f328.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/08672b6d-5c59-47fc-9e02-ed43f458f328.html" class="no-external">Interview Tierarztbesuche mit Welpen und Junghunden mit Gästin Anky Juhasz</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/08672b6d-5c59-47fc-9e02-ed43f458f328.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/08672b6d-5c59-47fc-9e02-ed43f458f328.html" class="no-external">Unter sich einfach orientiert hat und dass sie dann irgendwann sogar die komplette Körperspannung verloren hat und einfach sich halt nur noch so hingelegt hat und ja soll ob…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/08672b6d-5c59-47fc-9e02-ed43f458f328.html" class="no-external">
+<div class="listing-date">
+Feb 8, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="70" data-listing-date-sort="1708556400000" data-listing-file-modified-sort="1736558990042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3159">
+<div class="thumbnail">
+<p><a href="./qmds/8954f657-5727-427e-a7a1-6797feca31be.html" class="no-external"></a></p><a href="./qmds/8954f657-5727-427e-a7a1-6797feca31be.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/8954f657-5727-427e-a7a1-6797feca31be.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/8954f657-5727-427e-a7a1-6797feca31be.html" class="no-external">Die Hündin - über Entwicklung, Verhalten und deine Unterstützung</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/8954f657-5727-427e-a7a1-6797feca31be.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/8954f657-5727-427e-a7a1-6797feca31be.html" class="no-external">[Musik] Hinden und ihr Zyklus. Heute geht es um die Entwicklung und Verhaltenswesend von Hinden. Was hat das mit der Ziggy-Kert auffühlt, was mit der Scheindrechlichkeit und…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/8954f657-5727-427e-a7a1-6797feca31be.html" class="no-external">
+<div class="listing-date">
+Feb 22, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="71" data-listing-date-sort="1709679600000" data-listing-file-modified-sort="1736558990041" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="36" data-listing-word-count-sort="7162">
+<div class="thumbnail">
+<p><a href="./qmds/81c7d850-42b7-460c-a7c9-a858b8213e8e.html" class="no-external"></a></p><a href="./qmds/81c7d850-42b7-460c-a7c9-a858b8213e8e.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/81c7d850-42b7-460c-a7c9-a858b8213e8e.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/81c7d850-42b7-460c-a7c9-a858b8213e8e.html" class="no-external">Interview Rassenentwicklung mit Anton Schoberwalter</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/81c7d850-42b7-460c-a7c9-a858b8213e8e.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/81c7d850-42b7-460c-a7c9-a858b8213e8e.html" class="no-external">Was erwarte ich mir, was erwartet sich da von mir, bin ich dem Gewachsen, passt der Hund zu mir. Woher kommt die Rasse, wozu ich sie gezüchtet worden, der wesentlicher…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/81c7d850-42b7-460c-a7c9-a858b8213e8e.html" class="no-external">
+<div class="listing-date">
+Mar 6, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="72" data-listing-date-sort="1711062000000" data-listing-file-modified-sort="1736558990031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3006">
+<div class="thumbnail">
+<p><a href="./qmds/2179c46f-b962-4068-b011-7dc5dd4d43ca.html" class="no-external"></a></p><a href="./qmds/2179c46f-b962-4068-b011-7dc5dd4d43ca.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/2179c46f-b962-4068-b011-7dc5dd4d43ca.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/2179c46f-b962-4068-b011-7dc5dd4d43ca.html" class="no-external">Hundespiel - “Ohhhh sie spielen doch so süß” …tun sie das wirklich?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/2179c46f-b962-4068-b011-7dc5dd4d43ca.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/2179c46f-b962-4068-b011-7dc5dd4d43ca.html" class="no-external">Wenn du einen Hund hast, dann ist es wichtig zu erkennen, ob Hundemittern an der Spielen oder sich eher in einem Konflikt befinden oder vielleicht sexuelles Verhalten…<em></em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/2179c46f-b962-4068-b011-7dc5dd4d43ca.html" class="no-external">
+<div class="listing-date">
+Mar 22, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="73" data-listing-date-sort="1712354400000" data-listing-file-modified-sort="1736558990046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="40" data-listing-word-count-sort="7958">
+<div class="thumbnail">
+<p><a href="./qmds/b018f4db-05a2-4199-a1ec-4307c085fef4.html" class="no-external"></a></p><a href="./qmds/b018f4db-05a2-4199-a1ec-4307c085fef4.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/b018f4db-05a2-4199-a1ec-4307c085fef4.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/b018f4db-05a2-4199-a1ec-4307c085fef4.html" class="no-external">Interview Kind und Hund mit Expertin Claudia Peter-Plum</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/b018f4db-05a2-4199-a1ec-4307c085fef4.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/b018f4db-05a2-4199-a1ec-4307c085fef4.html" class="no-external">Krieg jetzt schon wieder gänsehaut, was zeigt einfach, was, ohne Nachhaltig auch, also wie die im Gedächtens der Kinder bleiben. Und damit herzlich willkommen in optimalen…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/b018f4db-05a2-4199-a1ec-4307c085fef4.html" class="no-external">
+<div class="listing-date">
+Apr 6, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="74" data-listing-date-sort="1713391200000" data-listing-file-modified-sort="1736558990031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3933">
+<div class="thumbnail">
+<p><a href="./qmds/1b80b32e-33b6-461e-ae46-ad194f191d99.html" class="no-external"></a></p><a href="./qmds/1b80b32e-33b6-461e-ae46-ad194f191d99.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/1b80b32e-33b6-461e-ae46-ad194f191d99.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/1b80b32e-33b6-461e-ae46-ad194f191d99.html" class="no-external">Ängstlicher Welpe oder Junghund und deine Unterstützung</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/1b80b32e-33b6-461e-ae46-ad194f191d99.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/1b80b32e-33b6-461e-ae46-ad194f191d99.html" class="no-external">Auch wenn du dir die Weltenzeit vielleicht anders vorgestellt hast, kann es sein, dass dein Welp recht längstlich ist, wenn er bei dir einzieht. Auch kann es sein, dass ich…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/1b80b32e-33b6-461e-ae46-ad194f191d99.html" class="no-external">
+<div class="listing-date">
+Apr 18, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="75" data-listing-date-sort="1715810400000" data-listing-file-modified-sort="1736558990047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5056">
+<div class="thumbnail">
+<p><a href="./qmds/c32db2de-ee3c-46fb-9a8c-27565fb76bc8.html" class="no-external"></a></p><a href="./qmds/c32db2de-ee3c-46fb-9a8c-27565fb76bc8.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/c32db2de-ee3c-46fb-9a8c-27565fb76bc8.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/c32db2de-ee3c-46fb-9a8c-27565fb76bc8.html" class="no-external">Rasseportrait mit Anton der Pudel / Wasserhund</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/c32db2de-ee3c-46fb-9a8c-27565fb76bc8.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/c32db2de-ee3c-46fb-9a8c-27565fb76bc8.html" class="no-external">Zu dem Zweck hat 10 in Wiener Schauspieler mit 10 im dressierten Budeln nach Weimar kommen in Lassen, da ist der Grütte, dass Gesenehart war, das so abost. Dass der Erdder…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/c32db2de-ee3c-46fb-9a8c-27565fb76bc8.html" class="no-external">
+<div class="listing-date">
+May 16, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="76" data-listing-date-sort="1718748000000" data-listing-file-modified-sort="1736558990045" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5024">
+<div class="thumbnail">
+<p><a href="./qmds/a6458546-a8a1-4d5b-bdc5-63e6f47750f5.html" class="no-external"></a></p><a href="./qmds/a6458546-a8a1-4d5b-bdc5-63e6f47750f5.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/a6458546-a8a1-4d5b-bdc5-63e6f47750f5.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/a6458546-a8a1-4d5b-bdc5-63e6f47750f5.html" class="no-external">Die perfekte Vorbereitung auf deinen Welpen</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/a6458546-a8a1-4d5b-bdc5-63e6f47750f5.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/a6458546-a8a1-4d5b-bdc5-63e6f47750f5.html" class="no-external">Diese Folge wird dazu beitragen, bewusst anzuschafeln, auf Wasser, die ich mit einer Webben einlassen wirst. Und wenn ich damit Menschen vergraue, dann soll es so sein. Viel…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/a6458546-a8a1-4d5b-bdc5-63e6f47750f5.html" class="no-external">
+<div class="listing-date">
+Jun 19, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="77" data-listing-date-sort="1720303200000" data-listing-file-modified-sort="1736558990033" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3039">
+<div class="thumbnail">
+<p><a href="./qmds/3fcde238-ccf0-4337-8809-fcf71ef53249.html" class="no-external"></a></p><a href="./qmds/3fcde238-ccf0-4337-8809-fcf71ef53249.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/3fcde238-ccf0-4337-8809-fcf71ef53249.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/3fcde238-ccf0-4337-8809-fcf71ef53249.html" class="no-external">Sommerwelpe Pro- und Kontra-Punkte</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/3fcde238-ccf0-4337-8809-fcf71ef53249.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/3fcde238-ccf0-4337-8809-fcf71ef53249.html" class="no-external">Sommersonne Urlaub, Schiln und dann on Topn noch ein Web wird. Das ging doch perfekt, oder? Aber ist es so es auch? Wir beleuchten heute gemeinsam die Vor- und Nachteil…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/3fcde238-ccf0-4337-8809-fcf71ef53249.html" class="no-external">
+<div class="listing-date">
+Jul 7, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="78" data-listing-date-sort="1726092000000" data-listing-file-modified-sort="1736558990033" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5720">
+<div class="thumbnail">
+<p><a href="./qmds/3ee9babb-0c47-45a7-976d-2eeb3e592333.html" class="no-external"></a></p><a href="./qmds/3ee9babb-0c47-45a7-976d-2eeb3e592333.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/3ee9babb-0c47-45a7-976d-2eeb3e592333.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/3ee9babb-0c47-45a7-976d-2eeb3e592333.html" class="no-external">Freilauf Ist dein junger Hund Freilauf-reif?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/3ee9babb-0c47-45a7-976d-2eeb3e592333.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/3ee9babb-0c47-45a7-976d-2eeb3e592333.html" class="no-external">Ab wann sind hunde eigentlich freiler Aufreif und wie bat man einen kleinen Radius auf? Sol man junge Hunde zu anderen hunden hinlaufen lassen oder sie besser an der…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/3ee9babb-0c47-45a7-976d-2eeb3e592333.html" class="no-external">
+<div class="listing-date">
+Sep 12, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="79" data-listing-date-sort="1727301600000" data-listing-file-modified-sort="1736558990037" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="35" data-listing-word-count-sort="6942">
+<div class="thumbnail">
+<p><a href="./qmds/55eb8e21-5a3a-46bf-8483-4b304671b05b.html" class="no-external"></a></p><a href="./qmds/55eb8e21-5a3a-46bf-8483-4b304671b05b.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/55eb8e21-5a3a-46bf-8483-4b304671b05b.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/55eb8e21-5a3a-46bf-8483-4b304671b05b.html" class="no-external">Interview Nasenarbeit als Hobby für jeden Hund</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/55eb8e21-5a3a-46bf-8483-4b304671b05b.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/55eb8e21-5a3a-46bf-8483-4b304671b05b.html" class="no-external">Hallo und herzlich willkommen im Optimals in Leben Podcast. Heute dreht sich alle rund das Thema “Narsenarbeit”. Dazu darf ich gleich eine Gästein von mir größten nämlich…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/55eb8e21-5a3a-46bf-8483-4b304671b05b.html" class="no-external">
+<div class="listing-date">
+Sep 26, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="80" data-listing-date-sort="1729720800000" data-listing-file-modified-sort="1736558990032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4889">
+<div class="thumbnail">
+<p><a href="./qmds/300fb5b1-9782-4764-9d52-a6c5de986007.html" class="no-external"></a></p><a href="./qmds/300fb5b1-9782-4764-9d52-a6c5de986007.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./qmds/300fb5b1-9782-4764-9d52-a6c5de986007.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./qmds/300fb5b1-9782-4764-9d52-a6c5de986007.html" class="no-external">Rasseportrait mit Anton die Terrier</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./qmds/300fb5b1-9782-4764-9d52-a6c5de986007.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./qmds/300fb5b1-9782-4764-9d52-a6c5de986007.html" class="no-external">weil die Katzen kann man ja nicht auf Rattenein setzen, sondern nur auf Mäusse. Da war neben dieser kleinen Nunde, die auf sehr anspruchlos waren, sehr hart waren. Die haben…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./qmds/300fb5b1-9782-4764-9d52-a6c5de986007.html" class="no-external">
+<div class="listing-date">
+Oct 24, 2024
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
