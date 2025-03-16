@@ -9,15 +9,17 @@ library(purrr)
 df <- read_csv("df.csv")
 
 
-model <- whisper("large-v3")
+model <- whisper("medium")
 
 
-
-
-map2(df$wav, df$trans, \(x,y){
-  trans <- predict(model, newdata = x, language = "de",n_threads = 30)  
+df |> 
+  mutate(i = row_number()) |> 
+  arrange(desc(i)) |> 
+  select(wav, trans) |> 
+  pmap(\(wav,trans){
+  transkript <- predict(model, newdata = wav, language = "de",n_threads = 16)  
   
-  saveRDS(trans, file = y)
+  saveRDS(transkript, file = trans)
 }, .progress = TRUE)
 
 
